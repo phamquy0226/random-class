@@ -1,0 +1,248 @@
+:root {
+  --ink: #20243a;
+  --muted: #687087;
+  --line: #e2e6f0;
+  --surface: #fff;
+  --purple: #654bd1;
+  --purple-dark: #5039b8;
+  --red: #c83d59;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at 12% 0%, #efedff 0, transparent 33rem),
+    linear-gradient(180deg, #f8f9fd 0%, #f3f5fa 100%);
+  color: var(--ink);
+  font-size: 16px;
+}
+
+.app-shell { width: min(1480px, 100%); padding-inline: clamp(18px, 3vw, 48px); }
+.topbar { min-height: 82px; border-color: #e3e6f0; }
+.brand { gap: 12px; font-size: 18px; }
+.brand-mark { width: 42px; height: 42px; font-size: 19px; }
+.top-nav { gap: clamp(18px, 2.6vw, 38px); }
+.nav-link { padding-block: 30px 27px; font-size: 14px; }
+.top-cta { padding: 13px 18px; font-size: 13px; }
+
+.hero-view {
+  min-height: clamp(430px, 56vh, 620px);
+  margin-top: 34px;
+  padding: clamp(34px, 5vw, 72px);
+  border: 1px solid #e9e5fb;
+  box-shadow: 0 22px 60px #332d6110;
+}
+.hero-copy { max-width: 660px; }
+.hero-copy h1 { font-size: clamp(42px, 5.2vw, 72px); }
+.hero-copy > p { max-width: 560px; color: #596178; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.75; }
+.hero-note { color: #626a80; font-size: 13px; }
+.hero-art { min-height: 390px; }
+.hero-wheel { width: clamp(230px, 23vw, 310px); height: clamp(230px, 23vw, 310px); }
+.hero-wheel-center { width: 72px; height: 72px; font-size: 18px; }
+.hero-orbit { width: clamp(280px, 28vw, 370px); height: clamp(280px, 28vw, 370px); }
+.orbit-two { width: clamp(330px, 33vw, 430px); height: clamp(330px, 33vw, 430px); }
+.art-caption { font-size: 12px; }
+
+.games-section,.content-view,.game-view { padding-block: 52px 68px; }
+.section-heading h2,.page-heading h1 { font-size: clamp(28px, 2.4vw, 36px); }
+.section-intro,.page-heading p { color: #626a80; font-size: 15px; }
+.eyebrow { font-size: 12px; letter-spacing: 1.3px; }
+.game-count,.student-count { padding: 10px 13px; font-size: 13px; }
+.game-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 22px; }
+.game-card,.panel { border-color: #e0e4ef; border-radius: 20px; box-shadow: 0 10px 30px #24264b0c; }
+.card-art { height: 205px; }
+.card-tag,.coming-pill { font-size: 10px; }
+.card-body { padding: 20px 22px 22px; }
+.card-kicker { font-size: 11px; }
+.card-title { font-size: 21px; }
+.card-description { min-height: 48px; color: #626a80; font-size: 14px; line-height: 1.65; }
+.card-action { font-size: 14px; }
+
+.game-view { padding-top: 30px; }
+.back-link { font-size: 14px; }
+.page-heading { margin-block: 22px 28px; }
+.game-status { padding: 10px 15px; font-size: 13px; }
+.panel { padding: clamp(20px, 2.2vw, 32px); }
+.panel-title-row h2,.history-heading h2 { color: #30364d; font-size: 19px; }
+.panel-title-row p { color: #687087; font-size: 13px; }
+.primary-button,.secondary-button,.danger-button {
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+.small-button { min-height: 42px; padding: 10px 15px; font-size: 13px; }
+.repeat-toggle { gap: 10px; color: #515a72; font-size: 13px; }
+.toggle-track { width: 40px; height: 22px; }
+.toggle-track::after { width: 16px; height: 16px; }
+.repeat-toggle input:checked + .toggle-track::after { transform: translateX(18px); }
+.wheel-duration-control,.wheel-duration-select { font-size: 13px; }
+.wheel-duration-select { min-height: 42px; }
+.wheel-hint,.mystery-game-hint,.flip-game-hint,.slot-game-hint,.scratch-hint,.team-hint {
+  color: #586178;
+  font-size: 14px;
+}
+.wheel-stage { width: min(100%, 620px); }
+.wheel-center { width: 72px; height: 72px; font-size: 18px; }
+.wheel-pointer { border-right-width: 19px; border-left-width: 19px; border-top-width: 32px; }
+.wheel-actions { gap: 16px; }
+.spin-button { min-width: 240px; }
+
+.wheel-add-students,.bulk-student-form {
+  gap: 10px;
+  padding: 17px;
+  border-color: #e3e7f0;
+  border-radius: 14px;
+  background: #f8f9fc;
+}
+.wheel-add-students label,.bulk-student-form label { color: #3c435a; font-size: 14px; }
+.wheel-add-students textarea,.bulk-student-form textarea {
+  min-height: 96px;
+  padding: 12px 14px;
+  border-color: #dce1ec;
+  border-radius: 10px;
+  color: #30364d;
+  font-size: 14px;
+  line-height: 1.6;
+}
+.wheel-roster { max-height: 290px; }
+.wheel-roster li,.student-row input,.list-empty { font-size: 14px; }
+.list-empty,.gift-grid-empty,.flip-card-empty,.slot-history-empty,.scratch-history-empty { font-size: 14px; }
+.student-list { max-height: 430px; }
+.student-row { gap: 10px; padding-block: 9px; }
+.student-row input { height: 44px; }
+.row-number { font-size: 12px; }
+.icon-button { width: 40px; height: 40px; }
+.gift-card-label,.flip-card-name { font-size: 16px; }
+.gift-card { flex-basis: 150px; min-height: 150px; }
+.flip-card-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 170px), 1fr)); gap: 20px; }
+.slot-reel-item { font-size: 15px; }
+.slot-result,.scratch-ticket-name { font-size: clamp(24px, 3.2vw, 42px); }
+.scratch-instructions { color: #586178; font-size: 14px; }
+.slot-history-panel .history-heading h2,.scratch-history-panel .history-heading h2 { font-size: 19px; }
+.slot-history-panel .history-heading span,.scratch-history-panel .history-heading span { font-size: 12px; }
+.slot-history-number { width: 28px; height: 28px; font-size: 11px; }
+.slot-history-result,.history-result { font-size: 14px; }
+.slot-history-list time,.history-meta,.history-time { font-size: 12px; }
+.team-control-label { color: #515a72; font-size: 14px; }
+.team-control-label select,.team-control-label input { min-height: 44px; color: #30364d; font-size: 14px; }
+.team-config-row .text-link { font-size: 13px; }
+.team-group-heading h3 { font-size: 16px; }
+.team-group-heading span { font-size: 12px; }
+.team-member-name { font-size: 14px; }
+.team-move-select { max-width: 110px; min-height: 36px; font-size: 12px; }
+.team-empty { font-size: 14px; }
+.team-results-heading h2 { font-size: 21px; }
+.team-results-heading p,.team-config-row p { color: #626a80; font-size: 14px; }
+
+.primary-button:active,.secondary-button:active,.danger-button:active,.icon-button:active {
+  transform: translateY(1px) scale(.98);
+}
+button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,textarea:focus-visible {
+  outline: 3px solid #9a88ef;
+  outline-offset: 3px;
+}
+textarea,select,input { color: #30364d; }
+
+@media (min-width: 1100px) {
+  .game-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .wheel-layout { grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); gap: 24px; }
+  .flip-card-grid { grid-template-columns: repeat(auto-fill, minmax(185px, 1fr)); }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .app-shell { width: min(1540px, 100%); }
+  .games-section,.content-view,.game-view { padding-block: 34px 42px; }
+  .games-section { padding-block: 14px 20px; }
+  .games-section .section-heading { margin-bottom: 10px; }
+  .games-section .card-art { height: 168px; }
+  .games-section .card-body { padding: 16px 18px 18px; }
+  .games-section .game-grid { gap: 18px; }
+  .game-view .page-heading { margin-block: 14px 20px; }
+  .wheel-stage { width: min(100%, 540px, 55vh); }
+}
+
+@media (max-width: 850px) {
+  .app-shell { padding-inline: 22px; }
+  .topbar { min-height: 72px; }
+  .brand { font-size: 16px; }
+  .top-nav { gap: 16px; }
+  .nav-link { font-size: 12px; }
+  .hero-view { min-height: 0; padding: 34px; }
+  .hero-art { min-height: 320px; }
+  .wheel-layout { grid-template-columns: minmax(0, 1fr) minmax(240px, .8fr); }
+}
+
+@media (max-width: 650px) {
+  .app-shell { padding-inline: 15px; }
+  .topbar { min-height: 66px; }
+  .brand { font-size: 14px; }
+  .top-cta { font-size: 11px; }
+  .top-nav { top: 64px; }
+  .hero-view { margin-top: 18px; padding: 28px 22px 12px; }
+  .hero-copy h1 { font-size: clamp(36px, 10vw, 46px); }
+  .hero-copy > p { font-size: 15px; }
+  .hero-art { min-height: 285px; }
+  .hero-wheel { width: 195px; height: 195px; }
+  .hero-orbit { width: 235px; height: 235px; }
+  .orbit-two { width: 270px; height: 270px; }
+  .games-section,.content-view,.game-view { padding-block: 34px 44px; }
+  .section-heading h2,.page-heading h1 { font-size: 25px; }
+  .section-intro,.page-heading p { font-size: 13px; }
+  .game-grid { grid-template-columns: 1fr; gap: 14px; }
+  .game-card { grid-template-columns: 34% 1fr; min-height: 150px; }
+  .card-art { min-height: 150px; height: 100%; }
+  .card-body { padding: 14px; }
+  .card-title { font-size: 18px; }
+  .card-description { min-height: 0; font-size: 12px; }
+  .card-action { font-size: 12px; }
+  .page-heading { gap: 10px; }
+  .page-heading .game-status { align-self: flex-start; }
+  .panel { padding: 17px; border-radius: 16px; }
+  .wheel-layout { grid-template-columns: 1fr; gap: 14px; }
+  .wheel-stage { width: min(100%, 440px); }
+  .wheel-panel { padding: 17px; }
+  .wheel-actions .spin-button { flex-basis: 100%; }
+  .flip-game-toolbar,.slot-game-toolbar,.scratch-toolbar,.team-toolbar { align-items: stretch; flex-direction: column; }
+  .flip-game-actions,.slot-game-actions,.scratch-actions,.team-actions { display: flex; }
+  .flip-game-actions button,.slot-game-actions button,.scratch-actions button,.team-actions button { flex: 1 1 auto; }
+  .flip-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .gift-card { flex-basis: 112px; min-height: 126px; }
+  .student-list { max-height: 55vh; }
+  .list-danger-zone { align-items: flex-start; flex-direction: column; font-size: 12px; }
+  .history-row { grid-template-columns: 34px 1fr; }
+  .history-result { font-size: 13px; }
+  .history-meta,.history-time { font-size: 11px; }
+  .team-group { min-width: min(100%, 250px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view,.primary-button,.secondary-button,.danger-button,.icon-button {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .ad-slot {
+    min-height: 72px;
+    display: grid;
+    place-items: center;
+    margin: 28px auto 0;
+    padding: 14px;
+    border: 1px dashed #c9cddd;
+    border-radius: 12px;
+    background: #f8f9fc;
+    color: #737b90;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px 18px;
+    margin-top: 14px;
+  }
+
+  .footer-links a { color: #5e6680; font-size: 12px; }
+  .footer-links a:hover { color: var(--purple); text-decoration: underline; }
+}

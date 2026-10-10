@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f6f8fc">
+    <meta name="description" content="Random Class là bộ trò chơi tương tác miễn phí giúp giáo viên chọn học sinh, chia nhóm và tạo hoạt động vui trong lớp học.">
+    <title>Random Class - Học vui, chơi vui</title>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Random Class">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:title" content="Random Class - Học vui, chơi vui">
+    <meta property="og:description" content="Bộ trò chơi tương tác miễn phí giúp giáo viên chọn học sinh, chia nhóm và tạo hoạt động vui trong lớp học.">
+    <meta property="og:url" content="https://phamquy0226.github.io/random-class/">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Random Class - Học vui, chơi vui">
+    <meta name="twitter:description" content="Bộ trò chơi tương tác miễn phí giúp giáo viên chọn học sinh, chia nhóm và tạo hoạt động vui trong lớp học.">
+    <link rel="canonical" href="https://phamquy0226.github.io/random-class/">
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/layout.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/games.css">
+    <link rel="stylesheet" href="src/css/presentation.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="#home" aria-label="Random Class - Trang chủ">
+          <span class="brand-mark" aria-hidden="true">R</span>
+          <span>Random <strong>Class</strong></span>
+        </a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Mở menu">☰</button>
+        <nav class="top-nav" id="main-nav" aria-label="Điều hướng chính">
+          <a class="nav-link active" href="#home" data-view-link="home">Trang chủ</a>
+          <a class="nav-link" href="#games" data-view-link="games">Trò chơi</a>
+          <a class="nav-link" href="#classes" data-view-link="classes">Danh sách lớp</a>
+          <a class="nav-link" href="#history" data-view-link="history">Lịch sử</a>
+        </nav>
+        <a class="top-cta" href="#games">Chơi ngay <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main>
+        <section class="view hero-view" id="home" data-view="home">
+          <div class="hero-copy">
+            <div class="eyebrow"><span class="eyebrow-dot"></span> GIỜ HỌC THÊM HÀO HỨNG</div>
+            <h1>Học vui hơn,<br><span>cùng chơi nhé!</span></h1>
+            <p>Random Class mang những trò chơi tương tác vào lớp học. Chọn trò chơi, thêm danh sách lớp và để niềm vui bắt đầu.</p>
+            <div class="hero-actions">
+              <a class="primary-button" href="#games">Khám phá trò chơi <span aria-hidden="true">→</span></a>
+              <a class="secondary-button" href="#classes">Quản lý danh sách</a>
+            </div>
+            <div class="hero-note"><span class="avatar-stack" aria-hidden="true"><i>01</i><i>02</i><i>03</i></span><span>Ngẫu nhiên công bằng, dùng chung danh sách</span></div>
+          </div>
+          <div class="hero-art" aria-label="Hình minh họa vòng quay">
+            <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+            <div class="hero-wheel"><span class="wheel-slice-label label-one">CHƠI</span><span class="wheel-slice-label label-two">VUI</span><span class="wheel-slice-label label-three">HỌC</span><span class="wheel-slice-label label-four">CÙNG</span><span class="hero-wheel-center">RC</span></div>
+            <span class="hero-spark spark-one">✦</span><span class="hero-spark spark-two">✳</span>
+            <div class="art-caption">Ai sẽ được gọi tên?</div>
+          </div>
+          <aside class="ad-slot hidden" data-ad-slot="home" aria-label="Vị trí quảng cáo dự kiến">Vị trí quảng cáo dự kiến · Chưa kết nối nhà cung cấp</aside>
+        </section>
+
+        <section class="view games-section hidden" id="games" data-view="games">
+          <div class="section-heading">
+            <div><div class="eyebrow">BẮT ĐẦU NGAY</div><h2>Chọn trò chơi</h2><p class="section-intro">Các trò chơi sẵn sàng dùng với danh sách lớp hiện tại.</p></div>
+            <span class="game-count"><span class="count-dot"></span> <span id="available-game-count">6</span> trò chơi sẵn sàng</span>
+          </div>
+          <div class="game-grid">
+            <a class="game-card featured-card" href="#wheel" data-view-link="wheel">
+              <span class="card-art wheel-card-art"><span class="card-tag">TRÒ CHƠI MẪU</span><span class="mini-wheel" aria-hidden="true"><span>RC</span></span><span class="art-star star-a">✦</span><span class="art-star star-b">✧</span></span>
+              <span class="card-body"><span class="card-kicker">MAY MẮN GỌI TÊN AI?</span><span class="card-title">Vòng xoay may mắn</span><span class="card-description">Quay vòng để chọn ngẫu nhiên học sinh từ danh sách lớp.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+            <a class="game-card featured-card" href="#mystery-box" data-view-link="mystery-box">
+              <span class="card-art mystery-card-art"><span class="card-tag mystery-card-tag">TRÒ CHƠI MỚI</span><span class="gift-illustration" aria-hidden="true"><i class="gift-lid"></i><i class="gift-body"></i><i class="gift-ribbon"></i><i class="gift-bow"></i></span><span class="floating-shape shape-a">✦</span></span>
+              <span class="card-body"><span class="card-kicker">BẤT NGỜ ĐANG CHỜ</span><span class="card-title">Hộp quà bí ẩn</span><span class="card-description">Chọn và mở từng hộp quà để khám phá học sinh may mắn bên trong.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+            <a class="game-card featured-card" href="#flip-card" data-view-link="flip-card">
+              <span class="card-art flip-card-art"><span class="card-tag flip-card-tag">TRÒ CHƠI MỚI</span><span class="flip-card-stack" aria-hidden="true"><i></i><i></i><i></i></span><span class="floating-shape flip-card-star">✦</span></span>
+              <span class="card-body"><span class="card-kicker">BÍ MẬT SAU MỖI LẦN LẬT</span><span class="card-title">Thẻ lật 3D</span><span class="card-description">Lật thẻ để khám phá tên học sinh đã được phân ngẫu nhiên.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+            <a class="game-card featured-card" href="#slot-machine" data-view-link="slot-machine">
+              <span class="card-art slot-card-art"><span class="card-tag slot-card-tag">TRÒ CHƠI MỚI</span><span class="slot-card-reels" aria-hidden="true"><i>RC</i><i>★</i><i>7</i></span><span class="floating-shape slot-card-star">✦</span></span>
+              <span class="card-body"><span class="card-kicker">MÁY XỔ SỐ LỚP MÌNH</span><span class="card-title">Máy xổ số Slot Machine</span><span class="card-description">Quay ba dải tên và chờ máy dừng ở học sinh được chọn.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+            <a class="game-card featured-card" href="#scratch-card" data-view-link="scratch-card">
+              <span class="card-art scratch-card-art"><span class="card-tag scratch-card-tag">TRÒ CHƠI MỚI</span><span class="scratch-card-illustration" aria-hidden="true"><i>?</i></span><span class="floating-shape scratch-card-star">✦</span></span>
+              <span class="card-body"><span class="card-kicker">BÍ MẬT SAU LỚP PHỦ</span><span class="card-title">Thẻ cào</span><span class="card-description">Cào lớp phủ để khám phá học sinh may mắn được chọn.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+            <a class="game-card featured-card" href="#team-generator" data-view-link="team-generator">
+              <span class="card-art team-card-art"><span class="card-tag team-card-tag">TRÒ CHƠI MỚI</span><span class="team-card-people" aria-hidden="true"><i>●</i><i>●</i><i>●</i><i>●</i></span><span class="floating-shape team-card-star">✦</span></span>
+              <span class="card-body"><span class="card-kicker">CÙNG NHAU HỢP SỨC</span><span class="card-title">Chia nhóm tự động</span><span class="card-description">Trộn danh sách, chia nhóm cân bằng rồi kéo thả để điều chỉnh.</span><span class="card-action">Chơi ngay <span aria-hidden="true">→</span></span></span>
+            </a>
+          </div>
+          <aside class="ad-slot hidden" data-ad-slot="games" aria-label="Vị trí quảng cáo dự kiến">Vị trí quảng cáo dự kiến · Chưa kết nối nhà cung cấp</aside>
+        </section>
+
+        <section class="view game-view hidden" id="wheel" data-view="wheel">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">MAY MẮN GỌI TÊN AI?</div><h1>Vòng xoay may mắn</h1><p>Danh sách: <strong id="wheel-active-list">Danh sách tạm thời</strong> · <span id="wheel-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="wheel-game-status">Sẵn sàng</span></span></div>
+          <div class="wheel-layout">
+            <section class="wheel-panel panel">
+              <div class="wheel-stage">
+                <div class="wheel-pointer" aria-hidden="true"></div>
+                <div class="wheel-disc wheel-empty" id="wheel-disc"><svg class="wheel-svg" id="wheel-svg" viewBox="0 0 400 400" role="img" aria-label="Vòng quay trống"></svg><div class="wheel-center" aria-hidden="true">RC</div></div>
+              </div>
+              <div class="wheel-actions">
+                <button class="primary-button spin-button" id="spin-button" type="button" disabled>BẮT ĐẦU QUAY</button>
+                <label class="wheel-duration-control" for="wheel-duration">Thời gian quay
+                  <select id="wheel-duration" class="wheel-duration-select">
+                    <option value="3">3 giây</option>
+                    <option value="5" selected>5 giây</option>
+                    <option value="8">8 giây</option>
+                    <option value="10">10 giây</option>
+                  </select>
+                </label>
+                <label class="repeat-toggle"><input id="no-repeat-toggle" type="checkbox"><span class="toggle-track"></span><span>Không lặp lại trong phiên</span></label>
+                <label class="repeat-toggle"><input id="wheel-sound-toggle" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+                <button class="secondary-button small-button wheel-reset" id="wheel-reset" type="button" disabled>Đặt lại</button>
+              </div>
+              <p class="wheel-hint" id="wheel-hint" aria-live="polite">Hãy thêm ít nhất một học sinh để bắt đầu.</p>
+            </section>
+            <aside class="wheel-side panel">
+              <div class="panel-title-row"><div><h2>Danh sách đang chơi</h2><p>Tên được dùng chung tạm thời trong các trò chơi.</p></div><a class="text-link" href="#classes">Quản lý</a></div>
+              <form class="wheel-add-students" id="wheel-add-students-form">
+                <label for="wheel-new-students">Thêm học sinh ngay trong trò chơi</label>
+                <textarea id="wheel-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+                <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+              </form>
+              <ul class="wheel-roster" id="wheel-roster"></ul>
+            </aside>
+          </div>
+        </section>
+
+        <section class="view game-view hidden" id="mystery-box" data-view="mystery-box">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">BẤT NGỜ ĐANG CHỜ</div><h1>Hộp quà bí ẩn</h1><p>Danh sách: <strong id="box-active-list">Danh sách tạm thời</strong> · <span id="box-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="box-game-status">Sẵn sàng</span></span></div>
+          <section class="panel mystery-game-panel">
+            <div class="mystery-game-toolbar">
+              <div class="mystery-game-settings">
+                <label class="repeat-toggle"><input id="box-no-repeat" type="checkbox" checked><span class="toggle-track"></span><span>Mỗi học sinh chỉ xuất hiện một lần</span></label>
+                <label class="repeat-toggle"><input id="box-sound" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+              </div>
+              <div class="mystery-game-actions">
+                <button class="primary-button" id="box-start" type="button" disabled>BẮT ĐẦU</button>
+                <button class="secondary-button small-button" id="box-reset" type="button" disabled>Đặt lại</button>
+              </div>
+            </div>
+            <form class="wheel-add-students" id="box-add-students-form">
+              <label for="box-new-students">Thêm nhiều học sinh ngay trong trò chơi</label>
+              <textarea id="box-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+              <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+            </form>
+            <div class="panel-title-row box-roster-heading">
+              <div><h2>Danh sách đang chơi</h2><p>Tên học sinh được dùng chung trong các trò chơi.</p></div>
+              <a class="text-link" href="#classes">Quản lý</a>
+            </div>
+            <ul class="wheel-roster" id="box-roster" aria-live="polite"></ul>
+            <p class="mystery-game-hint" id="box-hint" aria-live="polite">Hãy thêm học sinh vào danh sách lớp để bắt đầu.</p>
+            <div class="gift-grid" id="gift-grid" aria-label="Hộp quà bí ẩn" tabindex="-1"></div>
+          </section>
+        </section>
+
+        <section class="view game-view hidden" id="flip-card" data-view="flip-card">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">BÍ MẬT SAU MỖI LẦN LẬT</div><h1>Thẻ lật 3D</h1><p>Danh sách: <strong id="flip-active-list">Danh sách tạm thời</strong> · <span id="flip-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="flip-game-status">Sẵn sàng</span></span></div>
+          <section class="panel flip-game-panel">
+            <div class="flip-game-toolbar">
+              <div class="flip-game-settings">
+                <label class="repeat-toggle"><input id="flip-no-repeat" type="checkbox" checked><span class="toggle-track"></span><span>Không lặp học sinh giữa các thẻ</span></label>
+                <label class="repeat-toggle"><input id="flip-sound" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+              </div>
+              <div class="flip-game-actions">
+                <button class="primary-button" id="flip-start" type="button" disabled>BẮT ĐẦU</button>
+                <button class="secondary-button small-button" id="flip-random" type="button" disabled>Chọn thẻ ngẫu nhiên</button>
+                <button class="secondary-button small-button" id="flip-back" type="button" disabled>Úp lại</button>
+                <button class="secondary-button small-button" id="flip-reset" type="button" disabled>Đặt lại</button>
+              </div>
+            </div>
+            <form class="wheel-add-students" id="flip-add-students-form">
+              <label for="flip-new-students">Thêm nhiều học sinh ngay trong trò chơi</label>
+              <textarea id="flip-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+              <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+            </form>
+            <div class="panel-title-row flip-roster-heading">
+              <div><h2>Danh sách đang chơi</h2><p>Tên học sinh được dùng chung trong các trò chơi.</p></div>
+              <a class="text-link" href="#classes">Quản lý</a>
+            </div>
+            <ul class="wheel-roster flip-roster" id="flip-roster" aria-live="polite"></ul>
+            <p class="flip-game-hint" id="flip-hint" aria-live="polite">Hãy thêm học sinh vào danh sách lớp để bắt đầu.</p>
+            <ul class="flip-card-grid" id="flip-card-grid" aria-label="Các thẻ học sinh"></ul>
+          </section>
+        </section>
+
+        <section class="view game-view hidden" id="slot-machine" data-view="slot-machine">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">MÁY XỔ SỐ LỚP MÌNH</div><h1>Máy xổ số Slot Machine</h1><p>Danh sách: <strong id="slot-active-list">Danh sách tạm thời</strong> · <span id="slot-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="slot-game-status">Sẵn sàng</span></span></div>
+          <section class="panel slot-game-panel">
+            <div class="slot-game-toolbar">
+              <div class="slot-game-settings">
+                <label class="repeat-toggle"><input id="slot-no-repeat" type="checkbox"><span class="toggle-track"></span><span>Không lặp lại trong phiên</span></label>
+                <label class="repeat-toggle"><input id="slot-sound" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+              </div>
+              <div class="slot-game-actions">
+                <button class="primary-button" id="slot-spin" type="button" disabled>BẮT ĐẦU QUAY</button>
+                <button class="secondary-button small-button" id="slot-reset" type="button" disabled>Đặt lại</button>
+              </div>
+            </div>
+            <form class="wheel-add-students" id="slot-add-students-form">
+              <label for="slot-new-students">Thêm nhiều học sinh ngay trong trò chơi</label>
+              <textarea id="slot-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+              <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+            </form>
+            <div class="panel-title-row slot-roster-heading">
+              <div><h2>Danh sách đang chơi</h2><p>Tên học sinh được dùng chung trong các trò chơi.</p></div>
+              <a class="text-link" href="#classes">Quản lý</a>
+            </div>
+            <ul class="wheel-roster slot-roster" id="slot-roster" aria-live="polite"></ul>
+            <p class="slot-game-hint" id="slot-hint" aria-live="polite">Hãy thêm ít nhất một học sinh để bắt đầu.</p>
+            <div class="slot-machine" id="slot-machine-display" aria-label="Máy xổ số với ba dải tên">
+              <div class="slot-reels" id="slot-reels">
+                <div class="slot-reel-window"><div class="slot-reel-track"></div></div>
+                <div class="slot-reel-window"><div class="slot-reel-track"></div></div>
+                <div class="slot-reel-window"><div class="slot-reel-track"></div></div>
+              </div>
+              <div class="slot-result" id="slot-result" aria-live="polite">Tên được chọn sẽ hiện ở đây</div>
+            </div>
+            <section class="slot-history-panel" aria-labelledby="slot-history-title">
+              <div class="history-heading"><h2 id="slot-history-title">Lịch sử quay</h2><span id="slot-history-count">0 lượt</span></div>
+              <ol class="slot-history-list" id="slot-history-list"></ol>
+            </section>
+          </section>
+        </section>
+
+        <section class="view game-view hidden" id="scratch-card" data-view="scratch-card">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">BÍ MẬT SAU LỚP PHỦ</div><h1>Thẻ cào</h1><p>Danh sách: <strong id="scratch-active-list">Danh sách tạm thời</strong> · <span id="scratch-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="scratch-game-status">Sẵn sàng</span></span></div>
+          <section class="panel scratch-game-panel">
+            <div class="scratch-toolbar">
+              <div class="scratch-settings">
+                <label class="repeat-toggle"><input id="scratch-no-repeat" type="checkbox" checked><span class="toggle-track"></span><span>Không lặp lại trong phiên</span></label>
+                <label class="repeat-toggle"><input id="scratch-sound" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+              </div>
+              <div class="scratch-actions">
+                <button class="primary-button" id="scratch-start" type="button" disabled>BẮT ĐẦU</button>
+                <button class="secondary-button small-button" id="scratch-next" type="button" disabled>Thẻ tiếp theo</button>
+                <button class="secondary-button small-button" id="scratch-reveal" type="button" disabled>Mở kết quả</button>
+                <button class="secondary-button small-button" id="scratch-reset" type="button" disabled>Đặt lại</button>
+              </div>
+            </div>
+            <form class="wheel-add-students" id="scratch-add-students-form">
+              <label for="scratch-new-students">Thêm nhiều học sinh ngay trong trò chơi</label>
+              <textarea id="scratch-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+              <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+            </form>
+            <div class="panel-title-row scratch-roster-heading">
+              <div><h2>Danh sách đang chơi</h2><p>Tên học sinh được dùng chung trong các trò chơi.</p></div>
+              <a class="text-link" href="#classes">Quản lý</a>
+            </div>
+            <ul class="wheel-roster scratch-roster" id="scratch-roster" aria-live="polite"></ul>
+            <p class="scratch-hint" id="scratch-hint" aria-live="polite">Hãy thêm học sinh để bắt đầu.</p>
+            <div class="scratch-ticket-wrap">
+              <div class="scratch-ticket is-covered" id="scratch-ticket">
+                <div class="scratch-ticket-content" aria-live="polite">
+                  <span class="scratch-ticket-label">HỌC SINH MAY MẮN</span>
+                  <strong class="scratch-ticket-name" id="scratch-name" aria-hidden="true">?</strong>
+                  <span class="scratch-ticket-caption" id="scratch-caption">Bắt đầu rồi cào lớp phủ</span>
+                </div>
+                <canvas class="scratch-cover" id="scratch-cover" width="900" height="500" aria-label="Lớp phủ thẻ cào. Kéo chuột hoặc ngón tay để cào."></canvas>
+              </div>
+              <p class="scratch-instructions">Kéo chuột hoặc ngón tay trên thẻ để cào. Bạn cũng có thể chọn <strong>Mở kết quả</strong>.</p>
+            </div>
+            <section class="scratch-history-panel" aria-labelledby="scratch-history-title">
+              <div class="history-heading"><h2 id="scratch-history-title">Lịch sử thẻ cào</h2><span id="scratch-history-count">0 lượt</span></div>
+              <ol class="scratch-history-list" id="scratch-history-list"></ol>
+            </section>
+          </section>
+        </section>
+
+        <section class="view game-view hidden" id="team-generator" data-view="team-generator">
+          <a class="back-link" href="#games">← <span>Danh sách trò chơi</span></a>
+          <div class="page-heading"><div><div class="eyebrow">CÙNG NHAU HỢP SỨC</div><h1>Chia nhóm tự động</h1><p>Danh sách: <strong id="team-active-list">Danh sách tạm thời</strong> · <span id="team-student-count">0 học sinh</span></p></div><span class="game-status"><i></i><span id="team-game-status">Sẵn sàng</span></span></div>
+          <section class="panel team-game-panel">
+            <div class="team-toolbar">
+              <div class="team-settings">
+                <label class="team-control-label" for="team-mode">Chia theo
+                  <select id="team-mode">
+                    <option value="groups">Số nhóm</option>
+                    <option value="members">Số thành viên mỗi nhóm</option>
+                  </select>
+                </label>
+                <label class="team-control-label" for="team-size"><span id="team-size-label">Số nhóm</span>
+                  <input id="team-size" type="number" min="1" max="999" value="4" inputmode="numeric">
+                </label>
+                <label class="repeat-toggle"><input id="team-sound" type="checkbox"><span class="toggle-track"></span><span>Âm thanh</span></label>
+              </div>
+              <div class="team-actions">
+                <button class="primary-button" id="team-start" type="button">BẮT ĐẦU CHIA</button>
+                <button class="secondary-button small-button" id="team-shuffle" type="button" disabled>Xáo trộn lại</button>
+                <button class="secondary-button small-button" id="team-reset" type="button" disabled>Đặt lại</button>
+              </div>
+            </div>
+            <div class="team-config-row">
+              <p id="team-config-status">Mỗi học sinh sẽ xuất hiện đúng một lần trong mỗi lượt chia.</p>
+              <button class="text-link" id="team-save-config" type="button">Lưu cấu hình</button>
+            </div>
+            <form class="wheel-add-students" id="team-add-students-form">
+              <label for="team-new-students">Thêm nhiều học sinh ngay trong trò chơi</label>
+              <textarea id="team-new-students" rows="3" placeholder="Mỗi dòng một tên..." required></textarea>
+              <button class="secondary-button small-button" type="submit">Thêm vào danh sách</button>
+            </form>
+            <div class="panel-title-row team-roster-heading">
+              <div><h2>Danh sách đang chơi</h2><p>Danh sách lớp dùng chung với các trò chơi khác.</p></div>
+              <a class="text-link" href="#classes">Quản lý</a>
+            </div>
+            <ol class="wheel-roster team-roster" id="team-roster" aria-live="polite"></ol>
+            <p class="team-hint" id="team-hint" aria-live="polite">Thêm học sinh rồi bắt đầu chia nhóm.</p>
+            <div class="team-results-heading">
+              <div><h2>Kết quả chia nhóm</h2><p>Kéo học sinh sang nhóm khác hoặc dùng menu trên từng tên.</p></div>
+              <button class="secondary-button small-button" id="team-export" type="button" disabled>Xuất kết quả</button>
+            </div>
+            <div class="team-results" id="team-results" aria-live="polite"></div>
+          </section>
+        </section>
+
+        <section class="view content-view hidden" id="classes" data-view="classes">
+          <div class="page-heading"><div><div class="eyebrow">DỮ LIỆU DÙNG CHUNG</div><h1>Danh sách lớp</h1><p>Nhập tên để tự động dùng trong các trò chơi. Danh sách chỉ lưu trong phiên website và sẽ bị xóa khi đóng hoặc tải lại trang.</p></div><span class="student-count" id="class-count">0 học sinh</span></div>
+          <div class="class-layout">
+            <section class="panel class-panel">
+              <div class="panel-title-row"><div><h2>Danh sách tạm thời</h2><p id="active-list-description">Danh sách chỉ lưu tạm trong phiên website.</p></div></div>
+              <form class="bulk-student-form" id="bulk-student-form">
+                <label for="bulk-student-names">Thêm nhiều học sinh cùng lúc</label>
+                <textarea id="bulk-student-names" rows="5" placeholder="Mỗi dòng một tên học sinh..." required></textarea>
+                <p>Bỏ qua dòng trống; tên trùng sẽ được báo và không thêm phần nào.</p>
+                <button class="secondary-button" type="submit">Thêm danh sách tên</button>
+              </form>
+              <ul class="student-list" id="student-list" aria-live="polite"></ul>
+              <div class="list-danger-zone"><span>Xóa toàn bộ học sinh khỏi danh sách tạm thời.</span><button class="danger-button" id="clear-students" type="button">Xóa danh sách</button></div>
+            </section>
+          </div>
+        </section>
+
+        <section class="view content-view hidden" id="history" data-view="history">
+          <div class="page-heading"><div><div class="eyebrow">CÁC LƯỢT ĐÃ CHƠI</div><h1>Lịch sử</h1><p>Xem lại kết quả các trò chơi trên thiết bị này.</p></div><button class="danger-button" id="clear-history" type="button">Xóa lịch sử</button></div>
+          <section class="panel history-panel"><div class="history-heading"><h2>Kết quả gần đây</h2><span id="history-count">0 lượt</span></div><ol class="history-list" id="history-list"></ol></section>
+        </section>
+      </main>
+      <footer class="site-footer">
+        <span class="brand-mark small-mark" aria-hidden="true">R</span>
+        <span>Random Class · Giờ học vui hơn, cả lớp gắn kết hơn.</span>
+        <nav class="footer-links" aria-label="Thông tin website">
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+          <a href="privacy.html">Quyền riêng tư</a>
+          <a href="terms.html">Điều khoản</a>
+        </nav>
+      </footer>
+    </div>
+    <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+    <div class="result-overlay hidden" id="result-overlay" role="dialog" aria-modal="true" aria-labelledby="result-title">
+      <div class="result-card"><button class="result-close" id="result-close" type="button" aria-label="Đóng">×</button><div class="result-confetti" aria-hidden="true">✦</div><div class="result-kicker" id="result-kicker">VÒNG XOAY ĐÃ DỪNG</div><h2 id="result-title">Kết quả</h2><p class="result-subtitle" id="result-subtitle"></p><button class="primary-button" id="result-again" type="button">Chơi lại <span aria-hidden="true">↻</span></button></div>
+    </div>
+    <script defer src="src/js/storage.js"></script>
+    <script defer src="src/js/data-manager.js"></script>
+    <script defer src="src/js/random-engine.js"></script>
+    <script defer src="src/js/history-manager.js"></script>
+    <script defer src="src/js/games/wheel.js"></script>
+    <script defer src="src/js/games/mystery-box.js"></script>
+    <script defer src="src/js/games/flip-card.js"></script>
+    <script defer src="src/js/games/slot-machine.js"></script>
+    <script defer src="src/js/games/scratch-card.js"></script>
+    <script defer src="src/js/games/team-generator.js"></script>
+    <script defer src="src/js/site-config.js"></script>
+    <script defer src="src/js/ad-slots.js"></script>
+    <script defer src="src/js/app.js"></script>
+  </body>
+</html>

@@ -7,7 +7,7 @@ Website mini-game tĩnh cho lớp học, xây dựng bằng HTML, CSS và JavaSc
 - **Mở trực tiếp:** mở `index.html` trong trình duyệt. JavaScript dùng các script classic nạp theo thứ tự nên không cần cấu hình CORS cho ES modules.
 - **Chạy qua máy chủ tĩnh (khuyến nghị):** trong thư mục dự án chạy `py -m http.server 8000`, sau đó mở `http://localhost:8000`.
 - Có thể triển khai toàn bộ thư mục lên GitHub Pages, Netlify hoặc hosting tĩnh tương đương.
-- Bản phát hành GitHub Pages được chuẩn bị tại `https://phamquy0226.github.io/random-class/`; mỗi lần push lên nhánh `main` sẽ chạy workflow `.github/workflows/deploy-pages.yml`, workflow yêu cầu quyền bật GitHub Pages cho repository. Deployment chỉ hoàn tất nếu repository cho phép các quyền Actions khai báo trong workflow.
+- Bản phát hành GitHub Pages được chuẩn bị tại `https://phamquy0226.github.io/random-class/`; repository được cấu hình nguồn xuất bản là GitHub Actions. Mỗi lần push lên nhánh `main` sẽ chạy workflow `.github/workflows/deploy-pages.yml`.
 
 ## Chức năng hiện có
 
